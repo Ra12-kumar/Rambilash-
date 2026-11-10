@@ -131,3 +131,33 @@ brand or distributor before publishing.
 | own-horlicks-lite.jpg | Horlicks Lite Regular Malt jar, 450 g |
 | own-lactogen-pro-2.jpg | Nestlé Lactogen Pro 2 box |
 | own-amulspray.jpg | Amulspray Infant Milk Food tin |
+
+## HUL product photos
+
+| File | Source | Author | Licence |
+| --- | --- | --- | --- |
+| hul-surf-excel.jpg | [Surf Excel Easy Wash Blue](https://world.openproductsfacts.org/product/8909106026346) | Open Products Facts contributors | CC BY-SA 3.0 |
+| hul-vim.jpg | [Maha Bar](https://world.openfoodfacts.org/product/8901030535697) | Open Food Facts contributors | CC BY-SA 3.0 |
+| hul-domex.jpg | [Domex Fresh Guard 1L pet blue](https://world.openproductsfacts.org/product/8901030877292) | Open Products Facts contributors | CC BY-SA 3.0 |
+| hul-comfort.jpg | [comfort fabric conditioner](https://world.openproductsfacts.org/product/8901030930942) | Open Products Facts contributors | CC BY-SA 3.0 |
+| hul-lifebuoy.jpg | [lifebuoy bodywash](https://world.openbeautyfacts.org/product/8901030686030) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-lux.jpg | [lux soap](https://world.openbeautyfacts.org/product/8901030539749) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-dove.jpg | [Dove shampoo](https://world.openbeautyfacts.org/product/8901030704307) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-pears.jpg | [Pears Oil-Clear Glow](https://world.openbeautyfacts.org/product/8901030871030) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-hamam.jpg | [Hamam Soap](https://world.openbeautyfacts.org/product/8909106059160) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-ponds.jpg | [Ponds Body powders](https://world.openbeautyfacts.org/product/8901030869112) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-glow-lovely.jpg | [Glow & Lovely](https://world.openbeautyfacts.org/product/8901030942709) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-vaseline.jpg | [Vaseline Blue Seal Gentle Protective Jelly Baby](https://world.openbeautyfacts.org/product/60019035) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-lakme.jpg | [Lakme 9To5 Sun Expert Sunscreen Lotion](https://world.openbeautyfacts.org/product/8901030978609) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-sunsilk.jpg | [Thick & Long Conditioner](https://world.openbeautyfacts.org/product/8909106034037) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-clinic-plus.jpg | [Clinic Plus Strong & Long Health Shampoo](https://world.openbeautyfacts.org/product/8901030937163) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-tresemme.jpg | [tresemme](https://world.openbeautyfacts.org/product/8901030793691) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-indulekha.jpg | [Indulekha oil](https://world.openbeautyfacts.org/product/8901030586101) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-closeup.jpg | [Closeup Toothpaste](https://world.openbeautyfacts.org/product/8909106071612) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-pepsodent.jpg | [Pepsodent Germi Check Toothpaste](https://world.openbeautyfacts.org/product/8901030970368) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-axe.jpg | [Axe Dark Temptation Long Lasting Deodorant Bodyspray](https://world.openbeautyfacts.org/product/8901030912771) | Open Beauty Facts contributors | CC BY-SA 3.0 |
+| hul-taj-mahal.jpg | [Taj Mahal tea leaves 500 g](https://world.openfoodfacts.org/product/8901030658761) | Open Food Facts contributors | CC BY-SA 3.0 |
+| hul-taaza.jpg | [Taaza](https://world.openfoodfacts.org/product/8909106024434) | Open Food Facts contributors | CC BY-SA 3.0 |
+| hul-kissan-ketchup.jpg | [kissan](https://world.openfoodfacts.org/product/8901030921667) | Open Food Facts contributors | CC BY-SA 3.0 |
+| hul-kissan-jam.jpg | [kissan mixed fruit jam](https://world.openfoodfacts.org/product/8901030831690) | Open Food Facts contributors | CC BY-SA 3.0 |
+| hul-knorr.jpg | [Mixed Vegetable Soup](https://world.openfoodfacts.org/product/8901030902376) | Open Food Facts contributors | CC BY-SA 3.0 |

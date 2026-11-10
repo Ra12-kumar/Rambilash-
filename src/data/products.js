@@ -409,7 +409,33 @@ export const HUL_BRAND_MAP = Object.fromEntries(HUL_BRANDS.map((b) => [b.id, b])
 
 // Photos from Open Food / Beauty / Products Facts (CC BY-SA), stored as hul-<id>.jpg.
 // Ids listed here have a reviewed photo; the rest show the neutral "Photo coming soon" tile.
-const HUL_PHOTOS = new Set([]);
+const HUL_PHOTOS = new Set([
+  'surf-excel',
+  'vim',
+  'domex',
+  'comfort',
+  'lifebuoy',
+  'lux',
+  'dove',
+  'pears',
+  'hamam',
+  'ponds',
+  'glow-lovely',
+  'vaseline',
+  'lakme',
+  'sunsilk',
+  'clinic-plus',
+  'tresemme',
+  'indulekha',
+  'closeup',
+  'pepsodent',
+  'axe',
+  'taj-mahal',
+  'taaza',
+  'kissan-ketchup',
+  'kissan-jam',
+  'knorr',
+]);
 const HUL_PHOTO_OVERRIDES = { horlicks: img('own-horlicks-lite') };
 
 const hul = (id, name, brandId, emoji) =>
@@ -427,15 +453,15 @@ export const HUL_PRODUCTS = [
   hul('vim', 'Vim Dishwash Bar', 'vim', '🍽️'),
   hul('domex', 'Domex Toilet Cleaner', 'domex', '🚽'),
   hul('comfort', 'Comfort Fabric Conditioner', 'comfort', '👕'),
-  hul('lifebuoy', 'Lifebuoy Soap', 'lifebuoy', '🧼'),
+  hul('lifebuoy', 'Lifebuoy Soap & Body Wash', 'lifebuoy', '🧼'),
   hul('lux', 'Lux Soap', 'lux', '🧼'),
   hul('dove', 'Dove Soap & Shampoo', 'dove', '🧴'),
   hul('pears', 'Pears Soap', 'pears', '🧼'),
   hul('hamam', 'Hamam Soap', 'hamam', '🧼'),
   hul('liril', 'Liril Soap', 'liril', '🧼'),
-  hul('ponds', "Pond's Cream & Powder", 'ponds', '🧴'),
+  hul('ponds', "Pond's Talc & Cream", 'ponds', '🧴'),
   hul('glow-lovely', 'Glow & Lovely Face Cream', 'glow-lovely', '🧴'),
-  hul('vaseline', 'Vaseline Lotion & Petroleum Jelly', 'vaseline', '🧴'),
+  hul('vaseline', 'Vaseline Petroleum Jelly & Lotion', 'vaseline', '🧴'),
   hul('lakme', 'Lakmé Cosmetics', 'lakme', '💄'),
   hul('sunsilk', 'Sunsilk Shampoo', 'sunsilk', '🧴'),
   hul('clinic-plus', 'Clinic Plus Shampoo', 'clinic-plus', '🧴'),
