@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Poppins', 'Noto Sans Devanagari', ui-sans-serif, system-ui, sans-serif;
+  --font-hindi: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+
+  --color-forest-950: #072b18;
+  --color-forest-900: #0b3d22;
+  --color-forest-800: #12502e;
+  --color-forest-700: #166534;
+  --color-forest-600: #1b7a40;
+  --color-forest-100: #dcf3e3;
+  --color-forest-50: #effaf2;
+
+  --color-sun-300: #fde68a;
+  --color-sun-400: #facc15;
+  --color-sun-500: #eab308;
+
+  --color-saffron-400: #fb923c;
+  --color-saffron-500: #f97316;
+  --color-saffron-600: #ea580c;
+
+  --color-gold-500: #c9971c;
+  --color-cream-50: #fffdf6;
+  --color-cream-100: #fdf7e6;
+  --color-cream-200: #f8ecc9;
+
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #128c4b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream-50 font-sans text-slate-800 antialiased;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-saffron-500;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-200 active:scale-[0.98];
+}
+@utility btn-primary {
+  @apply btn bg-forest-700 text-white shadow-sm hover:bg-forest-800;
+}
+@utility btn-accent {
+  @apply btn bg-sun-400 text-forest-950 shadow-sm hover:bg-sun-300;
+}
+@utility btn-whatsapp {
+  @apply btn bg-whatsapp text-forest-950 shadow-sm hover:brightness-95;
+}
+@utility btn-outline {
+  @apply btn border border-forest-700/25 bg-white text-forest-800 hover:border-forest-700 hover:bg-forest-50;
+}
+@utility chip {
+  @apply rounded-full border px-4 py-2 text-sm font-medium whitespace-nowrap transition;
+}
+@utility chip-on {
+  @apply chip border-forest-700 bg-forest-700 text-white;
+}
+@utility chip-off {
+  @apply chip border-slate-200 bg-white text-slate-700 hover:border-forest-600 hover:text-forest-700;
+}
+@utility field {
+  @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-forest-600 focus:ring-2 focus:ring-forest-600/20 focus:outline-none;
+}
+@utility festive-pattern {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgb(250 204 21 / 0.35) 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 60%, rgb(255 255 255 / 0.25) 0 2px, transparent 3px);
+  background-size: 46px 46px, 64px 64px;
+}
+
+/* Horizontal chip / card rows: swipe on touch, no visible scrollbar. */
+@utility scroll-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  & > * {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}
+@utility card {
+  @apply rounded-3xl border border-slate-200/80 bg-white shadow-sm;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+@utility animate-float {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
