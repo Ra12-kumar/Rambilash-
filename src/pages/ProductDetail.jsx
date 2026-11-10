@@ -6,10 +6,15 @@ import ProductGrid from '../components/ProductGrid';
 import { packLabel } from '../utils/productText';
 import { CATEGORY_MAP, PRODUCT_BY_ID, relatedProducts } from '../data/products';
 import NotFound from './NotFound';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function ProductDetail() {
   const { id } = useParams();
   const product = PRODUCT_BY_ID[id];
+  usePageMeta(
+    product ? product.name : 'Page not found',
+    product ? `${product.name} by ${product.brand} at RamBilash Sah General & Wholesale Store, Darbhanga. Enquire on WhatsApp for retail or wholesale price and availability.` : null,
+  );
   if (!product) return <NotFound />;
 
   const isItc = product.category === 'itc';

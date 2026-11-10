@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { BadgePercent, Boxes, Eye, HeartHandshake, MapPin, PackageCheck, Smile, Store, Target, Users } from 'lucide-react';
 import { PageHeader, SectionHeading } from '../components/Section';
 import { BUSINESS } from '../config/business';
+import usePageMeta from '../hooks/usePageMeta';
 
 const WHY = [
   { icon: BadgePercent, title: 'Affordable pricing', text: 'Competitive market prices with attractive wholesale rates.' },
@@ -11,6 +12,7 @@ const WHY = [
 ];
 
 export default function About() {
+  usePageMeta('About Us', "About RamBilash Sah General & Wholesale Store in Koilathan, Darbhanga – a trusted store for grocery, general items and Puja Samagri, for wholesale and retail customers.");
   return (
     <>
       <PageHeader eyebrow="About Us" title={`About ${BUSINESS.name}`} subtitle={BUSINESS.tagline} />

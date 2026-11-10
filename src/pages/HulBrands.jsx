@@ -3,11 +3,13 @@ import ProductGrid from '../components/ProductGrid';
 import { WhatsAppIcon } from '../components/Icons';
 import { HUL_BRAND_MAP, HUL_PRODUCTS, HUL_SEGMENTS } from '../data/products';
 import { WHOLESALE_ENQUIRY_LINK } from '../utils/whatsapp';
+import usePageMeta from '../hooks/usePageMeta';
 
 const labelFor = (p) => HUL_BRAND_MAP[p.brandId].range;
 const BY_SEGMENT = HUL_SEGMENTS.map((s) => ({ ...s, products: HUL_PRODUCTS.filter((p) => p.segment === s.id) }));
 
 export default function HulBrands() {
+  usePageMeta('HUL Brands', "Hindustan Unilever (HUL) brands – Surf Excel, Vim, Lifebuoy, Lux, Dove, Pond's, Brooke Bond, Horlicks, Kissan, Knorr and more. Enquire for price and availability.");
   return (
     <>
       <PageHeader

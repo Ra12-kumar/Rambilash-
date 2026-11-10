@@ -14,8 +14,8 @@ export default function EnquiryButtons({ name, size = 'sm' }) {
         <WhatsAppIcon className="h-4 w-4 shrink-0" />
         {size === 'lg' ? 'WhatsApp Enquiry' : (
           <>
-            <span className="sm:hidden">Enquire</span>
-            <span className="hidden sm:inline">WhatsApp Enquiry</span>
+            <span className="lg:hidden">Enquire</span>
+            <span className="hidden lg:inline">WhatsApp Enquiry</span>
           </>
         )}
       </a>

@@ -7,6 +7,7 @@ import { WhatsAppIcon } from '../components/Icons';
 import { PUJA_CATEGORIES, PUJA_PRODUCTS } from '../data/products';
 import { BUSINESS } from '../config/business';
 import { CHHATH_ENQUIRY_LINK, WHOLESALE_ENQUIRY_LINK, telLink } from '../utils/whatsapp';
+import usePageMeta from '../hooks/usePageMeta';
 
 const PUJA_CAT_MAP = Object.fromEntries(PUJA_CATEGORIES.map((c) => [c.id, c.name]));
 const labelFor = (p) => PUJA_CAT_MAP[p.pujaCategory];
@@ -16,6 +17,7 @@ const CAT_IMAGE = Object.fromEntries(
 );
 
 export default function PujaSamagri() {
+  usePageMeta('Puja Samagri', "Puja Samagri in Darbhanga – agarbatti, dhoop, guggal, sambrani, diya, camphor, puja oil and ghee, kumkum, chandan, nariyal and dry fruits. Retail and wholesale.");
   const [params, setParams] = useSearchParams();
   const active = PUJA_CAT_MAP[params.get('cat')] ? params.get('cat') : 'all';
   const setActive = (id) => setParams(id === 'all' ? {} : { cat: id }, { replace: true, preventScrollReset: true });

@@ -32,6 +32,7 @@ import {
 } from '../data/products';
 import { BUSINESS, FULL_ADDRESS, MAP_LINK_URL } from '../config/business';
 import { GENERAL_ENQUIRY_LINK, WHOLESALE_ENQUIRY_LINK, telLink } from '../utils/whatsapp';
+import usePageMeta from '../hooks/usePageMeta';
 
 const byIds = (ids) => ids.map((id) => PRODUCT_BY_ID[id]).filter((x) => x?.image);
 
@@ -72,7 +73,7 @@ const PILLARS = [
     icon: ShoppingBasket,
     tag: 'General Store',
     title: 'Daily Grocery & FMCG',
-    image: '/images/products/daily-grocery.jpg',
+    image: '/images/products/daily-grocery.webp',
     points: ['Atta, dal, rice, sugar & cooking oil', 'Spices & Rakesh Masala', 'Biscuits, snacks, tea & beverages'],
     to: '/products',
     cta: 'Shop Grocery',
@@ -82,7 +83,7 @@ const PILLARS = [
     icon: Flame,
     tag: 'Puja Samagri',
     title: 'Everything for Your Puja',
-    image: '/images/products/own-garima-agarbatti.jpg',
+    image: '/images/products/own-garima-agarbatti.webp',
     points: ['Agarbatti, dhoop, guggal & sambrani', 'Diya, wicks, camphor & puja oil', 'Nariyal, kumkum, chandan & dry fruits'],
     to: '/puja-samagri',
     cta: 'View Puja Samagri',
@@ -92,7 +93,7 @@ const PILLARS = [
     icon: Boxes,
     tag: 'Wholesale',
     title: 'Bulk Orders at Wholesale Rates',
-    image: '/images/products/dal.jpg',
+    image: '/images/products/dal.webp',
     points: ['Supplies for kirana & general stores', 'Bulk quantities for functions & events', 'Send your list — get rates on WhatsApp'],
     href: WHOLESALE_ENQUIRY_LINK,
     cta: 'Ask for Wholesale Rates',
@@ -115,14 +116,23 @@ const STEPS = [
   { icon: Store, title: 'Collect your order', text: 'Pick up your order from our store at Koilathan.' },
 ];
 
-function PhotoTile({ product, className = '' }) {
+// `eager` is used for the hero photos, which are visible as soon as the page opens.
+function PhotoTile({ product, className = '', eager = false }) {
   return (
     <Link
       to={`/products/${product.id}`}
       className={`group flex flex-col overflow-hidden rounded-2xl bg-white p-2 shadow-lg ring-1 ring-black/5 transition hover:-translate-y-1 ${className}`}
     >
       <span className="flex aspect-square items-center justify-center overflow-hidden rounded-xl bg-white">
-        <img src={product.image} alt={product.name} loading="lazy" className="h-full w-full object-contain transition group-hover:scale-105" />
+        <img
+          src={product.image}
+          alt={product.name}
+          width="300"
+          height="300"
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+          className="h-full w-full object-contain transition group-hover:scale-105"
+        />
       </span>
       <span className="mt-1.5 truncate px-1 text-[11px] font-semibold text-forest-950 sm:text-xs">{product.name}</span>
     </Link>
@@ -130,6 +140,7 @@ function PhotoTile({ product, className = '' }) {
 }
 
 export default function Home() {
+  usePageMeta(null, "RamBilash Sah General & Wholesale Store, Koilathan near Darbhanga Airport: wholesale and retail grocery, FMCG brands and Puja Samagri. Enquire on WhatsApp for price and availability.");
   return (
     <>
       {/* ---------- Hero ---------- */}
@@ -182,7 +193,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
             <div className="grid grid-cols-3 gap-3 sm:gap-4">
               {HERO_PRODUCTS.map((p, i) => (
-                <PhotoTile key={p.id} product={p} className={i % 3 === 1 ? 'translate-y-6' : ''} />
+                <PhotoTile key={p.id} product={p} eager className={i % 3 === 1 ? 'translate-y-6' : ''} />
               ))}
             </div>
             <a

@@ -4,11 +4,13 @@ import { ArrowRight, X } from 'lucide-react';
 import ProductGrid from '../components/ProductGrid';
 import { PageHeader } from '../components/Section';
 import { ALL_STORE_PRODUCTS, CATEGORY_MAP, productPackOptions } from '../data/products';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function Products() {
   const [params, setParams] = useSearchParams();
   const query = params.get('q') ?? '';
   const category = params.get('category') ?? 'all';
+  usePageMeta(CATEGORY_MAP[category]?.name ?? 'All Products', "Browse grocery, cooking oil, atta, dal, spices, biscuits, snacks, beverages, personal care, household items and Puja Samagri. Enquire on WhatsApp for price.");
   const brand = params.get('brand') ?? 'all';
   const pack = params.get('pack') ?? 'all';
   const featuredOnly = params.get('featured') === '1';

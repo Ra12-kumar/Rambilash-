@@ -7,6 +7,7 @@ import { WhatsAppIcon } from '../components/Icons';
 import { PUJA_PRODUCTS } from '../data/products';
 import { BUSINESS, FULL_ADDRESS, MAP_LINK_URL } from '../config/business';
 import { CHHATH_ENQUIRY_LINK, telLink } from '../utils/whatsapp';
+import usePageMeta from '../hooks/usePageMeta';
 
 // Featured puja items first, then the rest of the Puja Samagri range.
 const PUJA_ESSENTIALS = [...PUJA_PRODUCTS.filter((p) => p.featured), ...PUJA_PRODUCTS.filter((p) => !p.featured)].slice(0, 12);
@@ -18,6 +19,7 @@ const STEPS = [
 ];
 
 export default function ChhathOffers() {
+  usePageMeta('Chhath Puja Offers', "Chhath Puja Samagri and essentials for retail and wholesale customers at RamBilash Sah General & Wholesale Store, Darbhanga. Contact us for offers.");
   return (
     <>
       <section className="relative overflow-hidden bg-linear-to-br from-saffron-600 via-saffron-500 to-sun-400 text-white">

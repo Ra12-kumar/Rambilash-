@@ -4,6 +4,7 @@ import { PageHeader } from '../components/Section';
 import { WhatsAppIcon } from '../components/Icons';
 import { BUSINESS, FULL_ADDRESS, MAP_EMBED_URL, MAP_LINK_URL } from '../config/business';
 import { GENERAL_ENQUIRY_LINK, telLink, waLink } from '../utils/whatsapp';
+import usePageMeta from '../hooks/usePageMeta';
 
 const EMPTY = { name: '', mobile: '', message: '' };
 
@@ -34,6 +35,7 @@ function Field({ id, label, error, children }) {
 }
 
 export default function Contact() {
+  usePageMeta('Contact Us', "Contact RamBilash Sah General & Wholesale Store, Koilathan, Near Darbhanga Airport, Darbhanga, Bihar – 846005. Call or WhatsApp 9470621075.");
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(null);

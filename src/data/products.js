@@ -2,7 +2,7 @@
 //
 // Each product supports:
 //   id, name, brand, category, emoji (shown on the neutral placeholder when no photo is set),
-//   image  – optional path to a real photo, e.g. '/images/products/atta.jpg'.
+//   image  – optional path to a real photo, e.g. '/images/products/atta.webp'.
 //            Only use a photo that shows this exact product (or your own shop photo of it).
 //   pack   – packaging type, e.g. 'Pouch', 'Bottle', 'Jar / Tin', 'Packet', 'Loose / Bulk'.
 //   sizes  – confirmed pack sizes only, e.g. ['500 ml', '1 L']. Leave empty if not confirmed.
@@ -72,7 +72,7 @@ const p = (id, name, brand, category, emoji, extra = {}) => ({
 const ASSORTED = 'Assorted Brands';
 const LOOSE = 'Loose / Assorted';
 const LOOSE_BULK = 'Loose / Bulk';
-const img = (file) => `/images/products/${file}.jpg`;
+const img = (file) => `/images/products/${file}.webp`;
 
 // Rakesh Masala varieties and pack sizes as listed on the brand's official site (rakeshmasala.com).
 // Shop stock is not confirmed, so they are labelled as catalogue examples.
@@ -315,7 +315,7 @@ export const ITC_BRANDS = [
 
 export const ITC_BRAND_MAP = Object.fromEntries(ITC_BRANDS.map((b) => [b.id, b]));
 
-// ITC pack photos come from Open Food / Beauty / Products Facts (CC BY-SA), stored as itc-<id>.jpg.
+// ITC pack photos come from Open Food / Beauty / Products Facts (CC BY-SA), stored as itc-<id>.webp.
 const ITC_PHOTOS = new Set([
   'aashirvaad-atta', 'aashirvaad-spices', 'aashirvaad-salt',
   'sunfeast-dark-fantasy', 'sunfeast-marie-light', 'sunfeast-bounce',
@@ -407,7 +407,7 @@ export const HUL_BRANDS = [
 
 export const HUL_BRAND_MAP = Object.fromEntries(HUL_BRANDS.map((b) => [b.id, b]));
 
-// Photos from Open Food / Beauty / Products Facts (CC BY-SA), stored as hul-<id>.jpg.
+// Photos from Open Food / Beauty / Products Facts (CC BY-SA), stored as hul-<id>.webp.
 // Ids listed here have a reviewed photo; the rest show the neutral "Photo coming soon" tile.
 const HUL_PHOTOS = new Set([
   'surf-excel',
@@ -491,26 +491,10 @@ export const HOME_CATEGORIES = HOME_CATEGORY_LIST.filter(
 // Infant formula is never promoted as "featured".
 export const FEATURED_PRODUCTS = ALL_STORE_PRODUCTS.filter((x) => x.featured && x.category !== 'baby-nutrition');
 
-export const STORE_BRANDS = [...new Set(ALL_STORE_PRODUCTS.map((x) => x.brand))].sort((a, b) =>
-  a.localeCompare(b),
-);
-
-// Pack type / size options for the "Pack & Size" filter (only confirmed data is used).
+// Pack type and sizes of a product (used by the ?pack= URL filter on the Products page).
 export const productPackOptions = (x) => [x.pack, ...x.sizes].filter(Boolean);
-const SIZE_ORDER = (s) => {
-  const m = /^([\d.]+)\s*(g|kg|ml|l)$/i.exec(s);
-  if (!m) return [0, s];
-  const mult = { g: 1, ml: 1, kg: 1000, l: 1000 }[m[2].toLowerCase()];
-  return [1, Number(m[1]) * mult];
-};
-export const PACK_OPTIONS = [...new Set(ALL_STORE_PRODUCTS.flatMap(productPackOptions))].sort((a, b) => {
-  const [ka, va] = SIZE_ORDER(a);
-  const [kb, vb] = SIZE_ORDER(b);
-  if (ka !== kb) return ka - kb;
-  return ka ? va - vb : String(va).localeCompare(String(vb));
-});
 
-// Lookup across every catalogue (store, puja and ITC) for product detail pages.
+// Lookup across every catalogue (store, puja, ITC and HUL) for product detail pages.
 export const PRODUCT_BY_ID = Object.fromEntries(
   [...ALL_STORE_PRODUCTS, ...ITC_PRODUCTS, ...HUL_PRODUCTS].map((x) => [x.id, x]),
 );

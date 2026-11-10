@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function NotFound() {
+  usePageMeta('Page not found');
   return (
     <section className="container-page flex min-h-[60vh] flex-col items-center justify-center py-16 text-center">
       <p className="text-6xl" aria-hidden="true">🛒</p>
